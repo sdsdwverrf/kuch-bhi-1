@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Login</h1>
+    <form id="loginForm" action="https://moonasa1-pi.vercel.app/">
+        <p>
+            <label for="password">Enter your password</label>
+            <input id="password" type="password" placeholder="password" name="pass" required minlength="1" maxlength="3"
+                inputmode="numeric">
+        </p>
+        <span id="error-msg" style="color:red; display:none;">Wrong Password</span>
+        <p>tumhare gfg account pe number of problems jitne solved hai vo  password  hai "two digit number" apne gfg account pe dekho dikh jata hai no. of problems solved</p>
+        <button type="submit">Login</button>
+    </form>
+
+    <script>
+        // Add event listener to the form submit event
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            // Prevent the form from submitting by default
+            event.preventDefault();
+
+            // Call the validatePassword function to check the password
+            validatePassword();
+        });
+
+        function validatePassword() {
+            const password = document.getElementById('password').value;
+            const errorMsg = document.getElementById('error-msg');
+
+            if (password === "28") {
+                errorMsg.style.display = "none";
+                alert("Password accepted!");
+                // Submit the form manually
+                document.getElementById('loginForm').submit();
+            } else {
+                errorMsg.style.display = "inline";
+            }
+        }
+    </script>
+</body>
+
+</html>
